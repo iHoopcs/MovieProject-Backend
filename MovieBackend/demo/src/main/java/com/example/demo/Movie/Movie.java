@@ -1,6 +1,12 @@
 package com.example.demo.Movie;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "movies")
 public class Movie {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
     private String type;
@@ -10,7 +16,6 @@ public class Movie {
     private String url;
 
     public Movie(){
-
     }
 
     public Movie(long id, String name, String type, int starRating, String rated, String url) {

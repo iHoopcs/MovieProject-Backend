@@ -1,26 +1,20 @@
 package com.example.demo.User;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:3000/")
 @RestController
-@RequestMapping(path = "api/v1/")
+@RequestMapping(path = "/api/v1/")
 public class UserController {
-    private final UserService userService;
+    //allows for interface method use
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+    UserRepository userRepository;
+
+    //Retrieve all users from db
+    @GetMapping("users") //get & display users
+    public Iterable<User> getUsers(){
+        return userRepository.findAll();
     }
 
-    @GetMapping("users")
-    public List<User> getUsers(){
-        //call method from Service class file
-        return userService.getUsers();
-    }
 }
