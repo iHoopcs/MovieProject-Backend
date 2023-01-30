@@ -7,23 +7,27 @@ public class Movie {
     private int starRating;
     private String rated;
 
+    private String url;
+
     public Movie(){
 
     }
 
-    public Movie(long id, String name, String type, int starRating, String rated) {
+    public Movie(long id, String name, String type, int starRating, String rated, String url) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.starRating = starRating;
         this.rated = rated;
+        this.url = url;
     }
 
-    public Movie(String name, String type, int starRating, String rated) {
+    public Movie(String name, String type, int starRating, String rated, String url) {
         this.name = name;
         this.type = type;
         this.starRating = starRating;
         this.rated = rated;
+        this.url = url;
     }
 
     public long getId() {
@@ -64,5 +68,25 @@ public class Movie {
 
     public void setRated(String rated) {
         this.rated = rated;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", starRating=" + starRating +
+                ", rated='" + rated + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }
