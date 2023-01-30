@@ -1,27 +1,50 @@
 package com.example.demo.Movie;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:3000/")
 @RestController
-@RequestMapping(path = "api/v1/")
+@RequestMapping(path = "/api/v1/")
 public class MovieController {
-    private final MovieService movieService;
-
+    //allows for interface method use
     @Autowired
-    public MovieController(MovieService movieService) {
-        this.movieService = movieService;
+    MovieRepository movieRepository;
+
+    //Retrieve all movies from db
+    @GetMapping("movies")
+    public Iterable<Movie> getMovies(){
+        return movieRepository.findAll();
     }
 
-    @GetMapping("movies")
-    public List<Movie> getMovies(){
-        //call method from Service class file
-        return movieService.getMovies();
+    @PostMapping("add")
+    public String addMovies(){
+        //create & add movies to db
+        Movie movie1 = new Movie(
+                "Transformers",
+                "Action",
+                5,
+                "PG13",
+                ""
+        );
+
+        Movie movie2 = new Movie(
+                "Spiderman",
+                "Action",
+                5,
+                "PG13",
+                ""
+        );
+
+        Movie movie3 = new Movie(
+                "Superman",
+                "Action",
+                5,
+                "PG13",
+                ""
+        );
+        movieRepository.saveAll(List.of(movie1,movie2,movie3));
+
+        return movie1.getName() + " " + movie2.getName() + " " + movie3.getName() + " Saved!";
     }
 }
