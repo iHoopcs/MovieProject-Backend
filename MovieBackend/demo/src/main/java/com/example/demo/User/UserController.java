@@ -7,14 +7,25 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/v1/")
 public class UserController {
-    //allows for interface method use
-    @Autowired
-    UserRepository userRepository;
-
-    //Retrieve all users from db
     @GetMapping("users") //get & display users
     public Iterable<User> getUsers(){
-        return userRepository.findAll();
+        User user1 = new User(
+                1,
+                "Caleb",
+                "Simmons",
+                "Csimmons@aol.com",
+                22
+        );
+
+        User user2 = new User(
+                2,
+                "Al",
+                "Simmons",
+                "Asimmons@aol.com",
+                53
+        );
+
+        return List.of(user1, user2);
     }
 
 }

@@ -16,4 +16,35 @@ public class MovieController {
     public Iterable<Movie> getMovies(){
         return movieRepository.findAll();
     }
+
+    @PostMapping("add")
+    public String addMovies(){
+        //create & add movies to db
+        Movie movie1 = new Movie(
+                "Transformers",
+                "Action",
+                5,
+                "PG13",
+                ""
+        );
+
+        Movie movie2 = new Movie(
+                "Spiderman",
+                "Action",
+                5,
+                "PG13",
+                ""
+        );
+
+        Movie movie3 = new Movie(
+                "Superman",
+                "Action",
+                5,
+                "PG13",
+                ""
+        );
+        movieRepository.saveAll(List.of(movie1,movie2,movie3));
+
+        return movie1.getName() + " " + movie2.getName() + " " + movie3.getName() + " Saved!";
+    }
 }
