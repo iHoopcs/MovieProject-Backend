@@ -14,7 +14,7 @@ public class UserController {
     public Iterable<User> getUsers(){ return userRepository.findAll(); }
 
     @PostMapping("add/user") //create & add user to db
-    public String createUser(User user){
+    public String createUser(@RequestBody User user){
 
         userRepository.save(user);
         return "User Added: \n" + user.getFirstName() +
@@ -22,6 +22,4 @@ public class UserController {
                 + " age: " + user.getAge()
                 + " w/ email: " + user.getEmail() ;
     }
-
-
 }
