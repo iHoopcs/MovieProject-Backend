@@ -7,8 +7,14 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/v1/")
 public class UserController {
+    @Autowired
+    UserRepository userRepository; //allows for interface method use
     @GetMapping("users") //get & display users
-    public Iterable<User> getUsers(){
+    public Iterable<User> getUsers(){ return userRepository.findAll(); }
+
+    @PostMapping("add/user") //create & add user to db
+    public String createUser(){
+
         User user1 = new User(
                 1,
                 "Caleb",
@@ -25,7 +31,10 @@ public class UserController {
                 53
         );
 
-        return List.of(user1, user2);
+        userRepository.saveAll(List.of(user1, user2));
+        return "Users Added:\n" + user1.getFirstName() + " "  + user1.getLastName() + "\n" +
+                user2.getFirstName() + " " + user2.getLastName();
     }
+
 
 }
