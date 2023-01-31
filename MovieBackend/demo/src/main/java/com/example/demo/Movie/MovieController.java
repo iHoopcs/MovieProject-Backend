@@ -7,9 +7,8 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/v1/")
 public class MovieController {
-    //allows for interface method use
     @Autowired
-    MovieRepository movieRepository;
+    MovieRepository movieRepository; //allows for interface method use
 
     //Retrieve all movies from db
     @GetMapping("movies")
@@ -17,9 +16,8 @@ public class MovieController {
         return movieRepository.findAll();
     }
 
-    @PostMapping("add")
+    @PostMapping("add/movie") //create & add movies to db
     public String addMovies(){
-        //create & add movies to db
         Movie movie1 = new Movie(
                 "Transformers",
                 "Action",
@@ -27,7 +25,6 @@ public class MovieController {
                 "PG13",
                 ""
         );
-
         Movie movie2 = new Movie(
                 "Spiderman",
                 "Action",
@@ -35,7 +32,6 @@ public class MovieController {
                 "PG13",
                 ""
         );
-
         Movie movie3 = new Movie(
                 "Superman",
                 "Action",
@@ -44,7 +40,6 @@ public class MovieController {
                 ""
         );
         movieRepository.saveAll(List.of(movie1,movie2,movie3));
-
-        return movie1.getName() + " " + movie2.getName() + " " + movie3.getName() + " Saved!";
+        return "Movies Added:\n" + movie1.getName() + "\n" + movie2.getName() + "\n" + movie3.getName();
     }
 }
