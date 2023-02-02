@@ -12,27 +12,29 @@ public class Movie {
     private String type;
     private int starRating;
     private String rated;
-
-    private String url;
+    private String movieUrl;
+    private String videoLink;
 
     public Movie(){
     }
 
-    public Movie(long id, String name, String type, int starRating, String rated, String url) {
+    public Movie(long id, String name, String type, int starRating, String rated, String movieUrl, String videoLink) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.starRating = starRating;
         this.rated = rated;
-        this.url = url;
+        this.movieUrl = movieUrl;
+        this.videoLink = videoLink;
     }
 
-    public Movie(String name, String type, int starRating, String rated, String url) {
+    public Movie(String name, String type, int starRating, String rated, String movieUrl, String videoLink) {
         this.name = name;
         this.type = type;
         this.starRating = starRating;
         this.rated = rated;
-        this.url = url;
+        this.movieUrl = movieUrl;
+        this.videoLink = videoLink;
     }
 
     public long getId() {
@@ -75,13 +77,17 @@ public class Movie {
         this.rated = rated;
     }
 
-    public String getUrl() {
-        return url;
+    public String getMovieUrl() {
+        return movieUrl;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setMovieUrl(String movieUrl) {
+        this.movieUrl = movieUrl;
     }
+
+    public String getVideoLink(){return videoLink; }
+
+    public void setVideoLink(String videoLink){this.videoLink = videoLink;}
 
     @Override
     public String toString() {
@@ -91,7 +97,8 @@ public class Movie {
                 ", type='" + type + '\'' +
                 ", starRating=" + starRating +
                 ", rated='" + rated + '\'' +
-                ", url='" + url + '\'' +
+                ", movieUrl='" + movieUrl + '\'' +
+                ", videoLink='" + videoLink + '\'' +
                 '}';
     }
 }

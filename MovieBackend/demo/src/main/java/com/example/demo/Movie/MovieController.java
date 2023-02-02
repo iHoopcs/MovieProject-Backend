@@ -4,9 +4,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+
 @RestController
-@RequestMapping(path = "/api/v1/")
+@RequestMapping(path = "/api/")
 public class MovieController {
     @Autowired
     MovieRepository movieRepository; //allows for interface method use
