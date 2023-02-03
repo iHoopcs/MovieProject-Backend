@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+
 @RestController
-@RequestMapping(path = "/api/v1/")
+@RequestMapping(path = "/api/")
 public class UserController {
     @Autowired
     UserRepository userRepository; //allows for interface method use
@@ -21,6 +21,8 @@ public class UserController {
         return "User Added: \n" + user.getFirstName() +
                 " " + user.getLastName()
                 + " age: " + user.getAge()
-                + " w/ email: " + user.getEmail() ;
+                + " w/ email: " + user.getEmail()
+                + "Account Username: " + user.getUsername()
+                + "Account Password: " + user.getPassword();
     }
 }
