@@ -14,11 +14,11 @@ public class Movie {
     private String rated;
     private String movieUrl;
     private String videoLink;
-
+    private String movieDescription;
     public Movie(){
     }
 
-    public Movie(long id, String name, String type, int starRating, String rated, String movieUrl, String videoLink) {
+    public Movie(long id, String name, String type, int starRating, String rated, String movieUrl, String videoLink, String movieDescription) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -26,15 +26,17 @@ public class Movie {
         this.rated = rated;
         this.movieUrl = movieUrl;
         this.videoLink = videoLink;
+        this.movieDescription = movieDescription;
     }
 
-    public Movie(String name, String type, int starRating, String rated, String movieUrl, String videoLink) {
+    public Movie(String name, String type, int starRating, String rated, String movieUrl, String videoLink, String movieDescription) {
         this.name = name;
         this.type = type;
         this.starRating = starRating;
         this.rated = rated;
         this.movieUrl = movieUrl;
         this.videoLink = videoLink;
+        this.movieDescription = movieDescription;
     }
 
     public long getId() {
@@ -89,6 +91,9 @@ public class Movie {
 
     public void setVideoLink(String videoLink){this.videoLink = videoLink;}
 
+    public String getMovieDescription() {return movieDescription;}
+
+    public void setMovieDescription(String movieDescription) {this.movieDescription = movieDescription;}
     @Override
     public String toString() {
         return "Movie{" +
@@ -99,6 +104,7 @@ public class Movie {
                 ", rated='" + rated + '\'' +
                 ", movieUrl='" + movieUrl + '\'' +
                 ", videoLink='" + videoLink + '\'' +
+                ", movieDescription='" + movieDescription  + '\'' +
                 '}';
     }
 }
