@@ -12,30 +12,30 @@ public class Movie {
     private String type;
     private int starRating;
     private String rated;
-    private String movieUrl;
-    private String videoLink;
+    private String imgUrl;
+    private String videoUrl;
     private String movieDescription;
     public Movie(){
     }
 
-    public Movie(long id, String name, String type, int starRating, String rated, String movieUrl, String videoLink, String movieDescription) {
+    public Movie(long id, String name, String type, int starRating, String rated, String imgUrl, String videoUrl, String movieDescription) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.starRating = starRating;
         this.rated = rated;
-        this.movieUrl = movieUrl;
-        this.videoLink = videoLink;
+        this.imgUrl = imgUrl;
+        this.videoUrl = videoUrl;
         this.movieDescription = movieDescription;
     }
 
-    public Movie(String name, String type, int starRating, String rated, String movieUrl, String videoLink, String movieDescription) {
+    public Movie(String name, String type, int starRating, String rated, String imgUrl, String videoUrl, String movieDescription) {
         this.name = name;
         this.type = type;
         this.starRating = starRating;
         this.rated = rated;
-        this.movieUrl = movieUrl;
-        this.videoLink = videoLink;
+        this.imgUrl = imgUrl;
+        this.videoUrl = videoUrl;
         this.movieDescription = movieDescription;
     }
 
@@ -79,17 +79,17 @@ public class Movie {
         this.rated = rated;
     }
 
-    public String getMovieUrl() {
-        return movieUrl;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setMovieUrl(String movieUrl) {
-        this.movieUrl = movieUrl;
+    public void setImgUrl(String movieUrl) {
+        this.imgUrl = imgUrl;
     }
 
-    public String getVideoLink(){return videoLink; }
+    public String getVideoUrl(){return videoUrl; }
 
-    public void setVideoLink(String videoLink){this.videoLink = videoLink;}
+    public void setVideoUrl(String videoUrl){this.videoUrl = videoUrl;}
 
     public String getMovieDescription() {return movieDescription;}
 
@@ -102,8 +102,8 @@ public class Movie {
                 ", type='" + type + '\'' +
                 ", starRating=" + starRating +
                 ", rated='" + rated + '\'' +
-                ", movieUrl='" + movieUrl + '\'' +
-                ", videoLink='" + videoLink + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", videoUrl='" + videoUrl + '\'' +
                 ", movieDescription='" + movieDescription  + '\'' +
                 '}';
     }
