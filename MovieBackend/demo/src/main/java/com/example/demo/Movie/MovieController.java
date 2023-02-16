@@ -18,4 +18,12 @@ public class MovieController {
         return movieRepository.findAll();
     }
 
+    @PostMapping("addMovie")
+    public String addMovie(Movie movie){
+        movieRepository.save(movie);
+
+        return movie.toString() + " added!";
+
+    }
+
 }
