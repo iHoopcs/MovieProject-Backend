@@ -83,7 +83,7 @@ public class Movie {
         return imgUrl;
     }
 
-    public void setImgUrl(String movieUrl) {
+    public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
 
