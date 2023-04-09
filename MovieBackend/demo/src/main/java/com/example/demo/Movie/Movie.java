@@ -15,10 +15,14 @@ public class Movie {
     private String imgUrl;
     private String videoUrl;
     private String movieDescription;
+    private int year;
+    private int hr;
+    private int min;
+
     public Movie(){
     }
 
-    public Movie(long id, String name, String type, int starRating, String rated, String imgUrl, String videoUrl, String movieDescription) {
+    public Movie(long id, String name, String type, int starRating, String rated, String imgUrl, String videoUrl, String movieDescription, int year, int hr, int min) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -27,9 +31,12 @@ public class Movie {
         this.imgUrl = imgUrl;
         this.videoUrl = videoUrl;
         this.movieDescription = movieDescription;
+        this.year = year;
+        this.hr = hr;
+        this.min = min;
     }
 
-    public Movie(String name, String type, int starRating, String rated, String imgUrl, String videoUrl, String movieDescription) {
+    public Movie(String name, String type, int starRating, String rated, String imgUrl, String videoUrl, String movieDescription, int year, int hr, int min) {
         this.name = name;
         this.type = type;
         this.starRating = starRating;
@@ -37,6 +44,9 @@ public class Movie {
         this.imgUrl = imgUrl;
         this.videoUrl = videoUrl;
         this.movieDescription = movieDescription;
+        this.year = year;
+        this.hr = hr;
+        this.min = min;
     }
 
     public long getId() {
@@ -94,6 +104,30 @@ public class Movie {
     public String getMovieDescription() {return movieDescription;}
 
     public void setMovieDescription(String movieDescription) {this.movieDescription = movieDescription;}
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+    public int getHr() {
+        return hr;
+    }
+
+    public void setHr(int hr) {
+        this.hr = hr;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
@@ -105,6 +139,9 @@ public class Movie {
                 ", imgUrl='" + imgUrl + '\'' +
                 ", videoUrl='" + videoUrl + '\'' +
                 ", movieDescription='" + movieDescription  + '\'' +
+                ", year='" + year + '\'' +
+                ", hr='" + hr + '\'' +
+                ", min='" + min + '\'' +
                 '}';
     }
 }

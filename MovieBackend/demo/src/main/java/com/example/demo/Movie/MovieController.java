@@ -48,6 +48,11 @@ public class MovieController {
         return movieRepository.findByType("Mystery/Sci-Fi");
     }
 
+    @RequestMapping(value = "/searchMovie", method = RequestMethod.GET)
+    public Iterable<Movie> searchMovie(String movieSearch){
+        return movieRepository.findByType(movieSearch);
+    }
+
     @RequestMapping(value = "/addMovie", method = RequestMethod.POST)
     public String addMovie(Movie movie){
         movieRepository.save(movie);
