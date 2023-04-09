@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 //Interface allowing CRUD method usage
 @Repository
 public interface MovieRepository extends CrudRepository<Movie, Long> {
+    Iterable<Movie> findByType(String type);
 }
