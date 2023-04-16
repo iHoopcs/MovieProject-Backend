@@ -32,6 +32,16 @@ public class MovieController {
     public Iterable<Movie> fetchComedy(){
         return movieRepository.findByType("Comedy");
     }
+    //Fetch Coming of Age
+    @RequestMapping(value = "/api/movies/comingOfAge", method = RequestMethod.GET)
+    public Iterable<Movie> fetchComingOfAge(){
+        return movieRepository.findByType("Coming of Age");
+    }
+    //Fetch Drama
+    @RequestMapping(value = "/api/movies/drama", method = RequestMethod.GET)
+    public Iterable<Movie> fetchDrama(){
+        return movieRepository.findByType("Drama");
+    }
     //Fetch Horror
     @RequestMapping(value = "/api/movies/horror", method = RequestMethod.GET)
     public Iterable<Movie> fetchHorror(){
